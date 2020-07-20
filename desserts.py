@@ -49,14 +49,16 @@ class Cupcake:
 
     @classmethod
     def get(cls, name):
-        if cls.cache[name]:
-            return cls.cache[name]:
-        else:
+        if name not in cls.cache:
             print("Sorry, that cupcake doesn't exist")
+        else:
+            return cls.cache[name]
 
 
 
-
+class Brownie(Cupcake):
+    def __init__(self,name, price):
+        super().__init__(name,"chocolate",price)
 
 if __name__ == '__main__':
     import doctest
