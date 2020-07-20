@@ -4,10 +4,40 @@
 class Cupcake:
     """A cupcake."""
 
+    cache = {}
+
+    def __init__(self, name, flavor, price):
+        self.name = name #name as string
+        self.flavor = flavor #str
+        self.price = price #price of this cupcake
+        self.qty = 0 # the amount of this cupcake in int
+        self.cache[name] = self
+
     def __repr__(self):
         """Human-readable printout for debugging."""
 
         return f'<Cupcake name="{self.name}" qty={self.qty}>'
+
+    """Instance methods"""
+
+    def add_stock(self, amount):
+        """Adds amount to self.qty"""
+
+        self.qty += amount
+
+    def sell(self, amount):
+        """Sell the given amount of cupcakes and update self.qty"""
+
+        if self.qty == 0:
+            print("Sorry, these cupcakes are sold out")
+        if self.qty - amount < 0:
+            self.qty = 0
+        else:
+            self.qty -= amount
+
+
+
+
 
 
 if __name__ == '__main__':
