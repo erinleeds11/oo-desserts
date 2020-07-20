@@ -45,6 +45,15 @@ class Cupcake:
             multiplied_amounts.append((ingredient[0], multiplied_ingredient))
         return multiplied_amounts
 
+    """Class Methods"""
+
+    @classmethod
+    def get(cls, name):
+        if cls.cache[name]:
+            return cls.cache[name]:
+        else:
+            print("Sorry, that cupcake doesn't exist")
+
 
 
 
