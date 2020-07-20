@@ -35,6 +35,15 @@ class Cupcake:
         else:
             self.qty -= amount
 
+    """Static Methods"""
+
+    @staticmethod
+    def scale_recipe(ingredients, amount):
+        multiplied_amounts = []
+        for ingredient in ingredients:
+            multiplied_ingredient = ingredient[1] * amount
+            multiplied_amounts.append((ingredient[0], multiplied_ingredient))
+        return multiplied_amounts
 
 
 
